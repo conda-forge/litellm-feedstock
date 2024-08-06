@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: 11392a5b0926440c83ee6eea313716f10273e47a407adcafcfb5dd670d492e2c
+  sha256: 0d0faa25470783dc9f30894a3bb86c90cd3ff72cf769393eaac563e53d2ec162
 
 build:
   entry_points:
