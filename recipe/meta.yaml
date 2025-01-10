@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.57.4" %}
+{% set version = "1.57.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: 747a870ddee9c71f9560fc68ad02485bc1008fcad7d7a43e87867a59b8ed0669
+  sha256: 981461d67dc851ee4dd204c238e9528cbeffb3001a7e9cf2d5c32982373335af
 
 build:
   entry_points:
@@ -23,6 +23,7 @@ requirements:
     - wheel
     - pip
   run:
+    - uvloop <0.22.0,>=0.21.0
     - httpx >=0.23.0,<0.28.0
     - python >={{ python_min }}
     - openai >=1.55.3
