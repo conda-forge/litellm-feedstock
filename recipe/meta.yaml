@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.60.0" %}
+{% set version = "1.60.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: 45e3d9d7c19c02b7a1adf1c86102395fc667ebf35f72033e490e8f6fae7d0f8e
+  sha256: a8170584fcfd6f5175201d869e61ccd8a40ffe3264fc5e53c5b805ddf8a6e05a
 
 build:
   entry_points:
@@ -26,7 +26,7 @@ requirements:
     - uvloop <0.22.0,>=0.21.0
     - httpx >=0.23.0,<0.28.0
     - python >={{ python_min }}
-    - openai >=1.55.3
+    - openai >=1.61.0
     - python-dotenv >=0.2.0
     - tiktoken >=0.7.0
     - importlib-metadata >=6.8.0
