@@ -144,4 +144,5 @@ Feedstock Maintainers
 =====================
 
 * [@jan-janssen](https://github.com/jan-janssen/)
+* [@m-rossi](https://github.com/m-rossi/)
 
