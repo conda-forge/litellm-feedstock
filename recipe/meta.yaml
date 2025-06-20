@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.72.6.post2" %}
+{% set version = "1.72.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: 24dbe0efaeca0712d2e18795a6734d1678af086ed9ea1893721c426fe984398d
+  sha256: 9bfdc156ebd8cb2fc869e0a388931b64468c4fd534df6a2f6e27f9cba2dafcb9
 
 build:
   entry_points:
@@ -32,7 +32,7 @@ requirements:
     - tokenizers
     - click
     - jinja2 >=3.1.2,<4.0.0
-    - aiohttp
+    - aiohttp >=3.10
     - pydantic >=2.0.0,<3.0.0
     - jsonschema >=4.22.0,<5.0.0
   run_constrained:
