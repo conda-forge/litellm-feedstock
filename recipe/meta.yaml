@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.77.2.post1" %}
+{% set version = "1.77.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: 908c7260a0f04f74aed93406396b813db9c29e1a9e65f010e1e010cbc64439d8
+  sha256: d8f9d674ef4e7673b1af02428fde27de5a8e84ca7268f003902340586aac7d96
 
 build:
   entry_points:
@@ -23,6 +23,7 @@ requirements:
     - wheel
     - pip
   run:
+    - pondpond >=1.4.1,<2.0.0
     - fastuuid >=0.12.0
     - httpx >=0.23.0
     - python >={{ python_min }}
