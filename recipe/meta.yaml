@@ -24,6 +24,7 @@ requirements:
     - pip
   run:
     - fastuuid >=0.13.0
+    - grpcio >=1.62.3,!=1.68.*,!=1.69.*,!=1.70.*,!=1.71.0,!=1.71.1,!=1.72.0,!=1.72.1,!=1.73.0
     - httpx >=0.23.0
     - python >={{ python_min }}
     - openai >=2.8.0
@@ -63,7 +64,6 @@ requirements:
     - semantic-router >=0.1.12
     - mlflow >3.1.4
     - soundfile >=0.12.1,<0.13.0
-    - grpcio >=1.62.3,!=1.68.*,!=1.69.*,!=1.70.*,!=1.71.0,!=1.71.1,!=1.72.0,!=1.72.1,!=1.73.0
     # not yet available on conda-forge
     - prisma >=0.11.0,<0.12.0
     - resend >=0.8.0
