@@ -14,7 +14,7 @@ build:
     - litellm = litellm:run_server
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -24,7 +24,6 @@ requirements:
     - pip
   run:
     - fastuuid >=0.13.0
-    - grpcio >=1.62.3,!=1.68.*,!=1.69.*,!=1.70.*,!=1.71.0,!=1.71.1,!=1.72.0,!=1.72.1,!=1.73.0
     - httpx >=0.23.0
     - python >={{ python_min }}
     - openai >=2.8.0
@@ -52,24 +51,26 @@ requirements:
     - azure-storage-blob >=12.25.1,<13.0.0
     - google-cloud-kms >=2.21.3,<3.0.0
     - google-cloud-iam >=2.19.1,<3.0.0
+    - google-cloud-aiplatform >=1.38.0
     - pynacl >=1.5.0,<2.0.0
     - websockets >=15.0.1,<16.0.0
-    - boto3 =1.36.0
-    - mcp >=1.21.2,<2.0.0
+    - boto3 =1.40.76
+    - mcp >=1.25.0,<2.0.0
+    - a2a-sdk >=0.3.22
     - rich =13.7.1
     - diskcache >=5.6.1,<6.0.0
     - polars >=1.31.0,<2.0.0
     - semantic-router >=0.1.12
     - mlflow >3.1.4
     - soundfile >=0.12.1,<0.13.0
-    - grpcio >=1.62.3,<1.68.0
+    - grpcio >=1.62.3,!=1.68.*,!=1.69.*,!=1.70.*,!=1.71.0,!=1.71.1,!=1.72.0,!=1.72.1,!=1.73.0
     # not yet available on conda-forge
     - prisma >=0.11.0,<0.12.0
     - resend >=0.8.0
     - fastapi-sso >=0.16.0,<0.17.0
     - redisvl >=0.4.1,<0.5.0
-    - litellm-proxy-extras =0.4.11
-    - litellm-enterprise =0.1.23
+    - litellm-proxy-extras =0.4.25
+    - litellm-enterprise =0.1.27
 
 test:
   imports:
