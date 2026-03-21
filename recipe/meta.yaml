@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.82.4" %}
+{% set version = "1.82.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: 9c52b1c0762cb0593cdc97b26a8e05004e19b03f394ccd0f42fac82eff0d4980
+  sha256: 7988a9b48c8ccd9e5ebced80a4dfce9ce87083b303c3f67082450a4ad6dd312f
 
 build:
   entry_points:
