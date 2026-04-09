@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.82.6" %}
+{% set version = "1.83.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: 2aa1c2da21fe940c33613aa447119674a3ad4d2ad5eb064e4d5ce5ee42420136
+  sha256: 6458d2030a41229460b321adee00517a91dbd8e63213cc953d355cb41d16f2d4
 
 build:
   entry_points:
@@ -23,20 +23,20 @@ requirements:
     - wheel
     - pip
   run:
-    - fastuuid >=0.13.0
+    - fastuuid 0.14.0
     - grpcio >=1.62.3,!=1.68.*,!=1.69.*,!=1.70.*,!=1.71.0,!=1.71.1,!=1.72.0,!=1.72.1,!=1.73.0
-    - httpx >=0.23.0
+    - httpx 0.28.1
     - python >={{ python_min }}
-    - openai >=2.8.0
-    - python-dotenv >=0.2.0
-    - tiktoken >=0.7.0
-    - importlib-metadata >=6.8.0
-    - tokenizers
-    - click
-    - jinja2 >=3.1.2,<4.0.0
-    - aiohttp >=3.10
-    - pydantic >=2.5.0,<3.0.0
-    - jsonschema >=4.23.0,<5.0.0
+    - openai 2.30.0
+    - python-dotenv 1.0.1
+    - tiktoken 0.12.0
+    - importlib-metadata 8.5.0
+    - tokenizers 0.22.2
+    - click 8.1.8
+    - jinja2 3.1.6
+    - aiohttp 3.13.5
+    - pydantic 2.12.5
+    - jsonschema 4.23.0
   run_constrained:
     - uvicorn >=0.32.1,<1.0.0
     - uvloop >=0.21.0,<0.22.0
