@@ -19,8 +19,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core
-    - wheel
+    - uv-build
     - pip
   run:
     - fastuuid ==0.14.0
