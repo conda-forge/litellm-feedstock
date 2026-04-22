@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.83.10" %}
+{% set version = "1.83.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: d54eaa98f93a1eb02decf593dbb525fa1ddd4cf03686c1d5c7bb69c2a9ba2a41
+  sha256: c091d2254f1d17a6779dbc28c176bf918525495eff944bd0d5f9b8c357dd6077
 
 build:
   entry_points:
     - litellm = litellm:run_server
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -67,6 +67,7 @@ requirements:
     - soundfile 0.12.1
     - pyroscope-io 0.8.16
     - grpcio 1.78.0
+    - restrictedpython 8.1
     # not yet available on conda-forge
     - prisma 0.11.0
     - resend 2.23.0
