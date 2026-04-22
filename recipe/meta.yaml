@@ -67,6 +67,7 @@ requirements:
     - soundfile 0.12.1
     - pyroscope-io 0.8.16
     - grpcio 1.78.0
+    - restrictedpython 8.1
     # not yet available on conda-forge
     - prisma 0.11.0
     - resend 2.23.0
