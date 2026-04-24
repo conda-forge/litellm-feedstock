@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.83.11" %}
+{% set version = "1.83.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: c091d2254f1d17a6779dbc28c176bf918525495eff944bd0d5f9b8c357dd6077
+  sha256: 803b53077cd678bb78d40f1a971920a8cd06073520c756e3d2bcb5c4da7bd352
 
 build:
   entry_points:
@@ -63,6 +63,7 @@ requirements:
     - diskcache 5.6.3
     - polars 1.38.1
     - semantic-router 0.1.12
+    - aurelio-sdk 0.0.19
     - mlflow 3.9.0
     - soundfile 0.12.1
     - pyroscope-io 0.8.16
@@ -73,7 +74,7 @@ requirements:
     - resend 2.23.0
     - fastapi-sso 0.19.0
     - redisvl 0.4.1
-    - litellm-proxy-extras 0.4.67
+    - litellm-proxy-extras 0.4.68
     - litellm-enterprise 0.1.38
 
 test:
