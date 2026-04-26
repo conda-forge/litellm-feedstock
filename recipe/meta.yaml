@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - uv-build
+    - uv-build ==0.10.7
     - pip
   run:
     - fastuuid ==0.14.0
@@ -36,46 +36,46 @@ requirements:
     - pydantic ==2.12.5
     - jsonschema ==4.23.0
   run_constrained:
-    - uvicorn 0.33.0
-    - uvloop 0.21.0
-    - gunicorn 23.0.0
-    - fastapi 0.124.4
-    - backoff 2.2.1
-    - pyyaml 6.0.3
-    - rq 2.7.0
-    - orjson 3.11.6
-    - apscheduler 3.11.2
-    - pyjwt 2.12.0
-    - python-multipart 0.0.26
-    - cryptography 46.0.7
-    - azure-identity 1.25.2
-    - azure-keyvault-secrets 4.10.0
-    - azure-storage-blob 12.28.0
-    - google-cloud-kms 2.24.2
-    - google-cloud-iam 2.19.1
-    - google-cloud-aiplatform 1.133.0
-    - pynacl 1.6.2
-    - websockets 15.0.1
-    - boto3 1.42.59
-    - mcp 1.26.0
-    - a2a-sdk 0.3.24
-    - rich 13.9.4
-    - diskcache 5.6.3
-    - polars 1.38.1
-    - semantic-router 0.1.12
-    - aurelio-sdk 0.0.19
-    - mlflow 3.11.1
-    - soundfile 0.12.1
-    - pyroscope-io 0.8.16
-    - grpcio 1.78.0
-    - restrictedpython 8.1
+    - uvicorn ==0.33.0
+    - uvloop ==0.21.0
+    - gunicorn ==23.0.0
+    - fastapi ==0.124.4
+    - backoff ==2.2.1
+    - pyyaml ==6.0.3
+    - rq ==2.7.0
+    - orjson ==3.11.6
+    - apscheduler ==3.11.2
+    - pyjwt ==2.12.0
+    - python-multipart ==0.0.26
+    - cryptography ==46.0.7
+    - azure-identity ==1.25.2
+    - azure-keyvault-secrets ==4.10.0
+    - azure-storage-blob ==12.28.0
+    - google-cloud-kms ==2.24.2
+    - google-cloud-iam ==2.19.1
+    - google-cloud-aiplatform ==1.133.0
+    - pynacl ==1.6.2
+    - websockets ==15.0.1
+    - boto3 ==1.42.59
+    - mcp ==1.26.0
+    - a2a-sdk ==0.3.24
+    - rich ==13.9.4
+    - diskcache ==5.6.3
+    - polars ==1.38.1
+    - semantic-router ==0.1.12
+    - aurelio-sdk ==0.0.19
+    - mlflow ==3.11.1
+    - soundfile ==0.12.1
+    - pyroscope-io ==0.8.16
+    - grpcio ==1.78.0
+    - restrictedpython ==8.1
     # not yet available on conda-forge
-    - prisma 0.11.0
-    - resend 2.23.0
-    - fastapi-sso 0.19.0
-    - redisvl 0.4.1
-    - litellm-proxy-extras 0.4.69
-    - litellm-enterprise 0.1.39
+    - prisma ==0.11.0
+    - resend ==2.23.0
+    - fastapi-sso ==0.19.0
+    - redisvl ==0.4.1
+    - litellm-proxy-extras ==0.4.69
+    - litellm-enterprise ==0.1.39
 
 test:
   imports:
