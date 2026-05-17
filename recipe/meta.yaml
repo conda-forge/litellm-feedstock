@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.84.0" %}
+{% set version = "1.85.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: b8ad0cbea11a5941b18d5af973017a340abd3d3ab41cb86e5401b970626d71a6
+  sha256: babdd569809af913d08a08a7eb55df1ed3e6a3960ee365c6cef4ad031c9bc72a
 
 build:
   entry_points:
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - uv-build ==0.10.7
+    - uv-build ==0.11.8
     - pip
   run:
     - fastuuid >=0.14.0,<1.0
@@ -46,7 +46,7 @@ requirements:
     - orjson ==3.11.6
     - apscheduler ==3.11.2
     - pyjwt ==2.12.0
-    - python-multipart ==0.0.26
+    - python-multipart ==0.0.27
     - cryptography ==46.0.7
     - azure-identity ==1.25.2
     - azure-keyvault-secrets ==4.10.0
@@ -56,7 +56,7 @@ requirements:
     - google-cloud-aiplatform ==1.133.0
     - pynacl ==1.6.2
     - websockets ==15.0.1
-    - boto3 ==1.42.59
+    - boto3 ==1.43.1
     - mcp ==1.26.0
     - a2a-sdk ==0.3.24
     - rich ==13.9.4
@@ -74,8 +74,8 @@ requirements:
     - resend ==2.23.0
     - fastapi-sso ==0.19.0
     - redisvl ==0.4.1
-    - litellm-proxy-extras ==0.4.69
-    - litellm-enterprise ==0.1.39
+    - litellm-proxy-extras ==0.4.72
+    - litellm-enterprise ==0.1.40
 
 test:
   imports:
