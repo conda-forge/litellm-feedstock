@@ -18,9 +18,10 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
     - maturin ==1.9.4
     - pip
+    - puccinialin
+    - python {{ python_min }}
   run:
     - fastuuid >=0.14.0,<1.0
     - httpx >=0.28.0,<1.0
