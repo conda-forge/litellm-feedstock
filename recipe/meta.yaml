@@ -16,6 +16,7 @@ build:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  skip: true  # [py>313]
 
 requirements:
   build:
@@ -25,11 +26,11 @@ requirements:
     - maturin ==1.9.4
     - pip
     - puccinialin
-    - python {{ python_min }}
+    - python
   run:
     - fastuuid >=0.14.0,<1.0
     - httpx >=0.28.0,<1.0
-    - python >={{ python_min }},<3.14
+    - python
     - openai >=2.20.0,<3.0.0
     - python-dotenv >=1.0.0,<2.0
     - tiktoken >=0.8.0,<1.0
