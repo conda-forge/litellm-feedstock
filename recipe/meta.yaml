@@ -20,7 +20,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('rust') }}
+    - {{ stdlib("c") }}
+    - {{ compiler("rust") }}
     - cargo-bundle-licenses
   host:
     - maturin ==1.9.4
