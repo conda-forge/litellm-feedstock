@@ -12,9 +12,6 @@ source:
 build:
   entry_points:
     - litellm = litellm:run_server
-  script:
-    - cd litellm-rust; cargo-bundle-licenses --format yaml --output THIRDPARTY.yml; cd ..
-    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [py>313 or py<311]
   number: 0
 
