@@ -139,8 +139,7 @@ about:
   license: MIT
   license_file:
     - LICENSE
-    - litellm-rust/THIRDPARTY.yml  # [not win]
-    - litellm-rust\THIRDPARTY.yml  # [win]
+    - litellm-rust/THIRDPARTY.yml
 
 extra:
   recipe-maintainers:
