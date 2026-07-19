@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.92.0" %}
+{% set version = "1.93.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: 773adf5503ee1793289689c899394a83df8122993760d9acd782e32aa798db9d
+  sha256: 140bf215e264c71601bca9c06d2436c5451bb59e1e195ea23fc2d3d87b6929ec
 
 build:
   entry_points:
     - litellm = litellm:run_server
-  skip: true  # [py>313 or py<311]
+  skip: true  # [py>314 or py<311]
   number: 0
 
 requirements:
@@ -66,9 +66,9 @@ requirements:
     - boto3 >=1.43.1,<2.0
     - azure-identity >=1.25.2,<2.0
     - azure-storage-blob >=12.28.0,<13.0
-    - mcp >=1.26.0,<2.0
-    - litellm-proxy-extras ==0.4.75
-    - litellm-enterprise ==0.1.47
+    - mcp >=1.28.1,<2.0
+    - litellm-proxy-extras ==0.4.76
+    - litellm-enterprise ==0.1.49
     - restrictedpython >=8.1,<9.0
     - rich >=13.9.4,<14.0
     - polars >=1.38.1,<2.0
@@ -118,7 +118,7 @@ requirements:
     - opentelemetry-sdk ==1.28.0
     - opentelemetry-exporter-otlp ==1.28.0
     - opentelemetry-instrumentation-fastapi ==0.49b0
-    - ddtrace >=2.19.0,<3.0
+    - ddtrace >=4.8.2,<5.0
     - sentry-sdk >=2.21.0,<3.0
     - mangum >=0.17.0,<1.0
     - azure-ai-contentsafety >=1.0.0,<2.0
@@ -143,8 +143,7 @@ about:
   license: MIT
   license_file:
     - LICENSE
-    - litellm-rust/THIRDPARTY.yml  # [not win]
-    - litellm-rust\THIRDPARTY.yml  # [win]
+    - litellm-rust/THIRDPARTY.yml
 
 extra:
   recipe-maintainers:
