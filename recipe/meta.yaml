@@ -1,5 +1,5 @@
 {% set name = "litellm" %}
-{% set version = "1.94.1" %}
+{% set version = "1.95.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litellm-{{ version }}.tar.gz
-  sha256: e9effe4c1e9206740b4bb4c98142ea1f71bae57e49df007cd25ef24b0ce4563f
+  sha256: 0ef126d52c7a559f8353e50d60fd0d5e7e6c8767ad54df25ddaf79b9edca1afc
 
 build:
   entry_points:
@@ -67,8 +67,8 @@ requirements:
     - azure-identity >=1.25.2,<2.0
     - azure-storage-blob >=12.28.0,<13.0
     - mcp >=1.28.1,<2.0
-    - litellm-proxy-extras ==0.4.76
-    - litellm-enterprise ==0.1.49
+    - litellm-proxy-extras ==0.4.81
+    - litellm-enterprise ==0.1.52
     - restrictedpython >=8.1,<9.0
     - rich >=13.9.4,<14.0
     - polars >=1.38.1,<2.0
@@ -76,10 +76,12 @@ requirements:
     - pyroscope-io >=0.8.16,<1.0
     - pydantic-settings >=2.14.1,<3.0
     - expression >=5.6.0,<6.0
+    - inquirerpy >=0.3.4,<1.0
     # cli
     - rich >=13.9.4,<14.0
     - pyyaml >=6.0.3,<7.0
     - requests >=2.32.0,<3.0
+    - inquirerpy >=0.3.4,<1.0
     # extra_proxy
     - prisma >=0.11.0,<1.0
     - azure-identity >=1.25.2,<2.0
@@ -93,6 +95,8 @@ requirements:
     - numpydoc >=1.8.0,<2.0
     # caching
     - diskcache >=5.6.3,<6.0
+    # saml
+    - python3-saml >=1.16.0,<2.0
     # semantic-router
     - semantic-router >=0.1.15,<1.0
     - aurelio-sdk >=0.0.19,<1.0
@@ -107,6 +111,8 @@ requirements:
     - numpy >=1.26.0
     # google
     - google-cloud-aiplatform >=1.133.0,<2.0
+    # bedrock-realtime
+    - aws-sdk-bedrock-runtime >=0.7.0,<0.8.0
     # proxy-runtime
     - google-cloud-aiplatform >=1.133.0,<2.0
     - google-genai >=1.37.0,<2.0
