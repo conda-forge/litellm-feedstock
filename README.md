@@ -3,11 +3,15 @@ About litellm-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/litellm-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/BerriAI/litellm
+Home: https://www.litellm.ai/
 
 Package license: MIT
 
 Summary: Library to easily interface with LLM API providers
+
+Development: https://github.com/BerriAI/litellm
+
+Documentation: https://docs.litellm.ai/
 
 Current build status
 ====================
