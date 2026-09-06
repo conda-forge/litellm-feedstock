@@ -41,7 +41,6 @@ requirements:
     - puccinialin
     - python
   run:
-    - pydantic-settings >=2.14.1,<3.0
     - fastuuid >=0.14.0,<1.0
     - httpx >=0.28.0,<1.0
     - python
