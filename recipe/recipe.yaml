@@ -18,7 +18,7 @@ build:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - cd ..
     - python -m pip install . -vv
-  number: 0
+  number: 1
   python:
     entry_points:
       - litellm = litellm:run_server
@@ -56,6 +56,121 @@ requirements:
     - pydantic-settings >=2.14.1,<3.0
     - jsonschema >=4.0.0,<5.0
     - boto3 >=1.43.1,<2.0
+  # Optional dependency groups (CEP 44) mirroring the
+  # [project.optional-dependencies] groups of litellm's pyproject.toml.
+  # Dependencies that are not packaged on conda-forge, or whose upstream pin has
+  # no satisfiable conda-forge build, are omitted and noted inline.
+  extras:
+    # Server runtime for the LiteLLM proxy.
+    proxy:
+      - gunicorn >=23.0.0,<24.0
+      - uvicorn >=0.33.0,<1.0
+      - granian >=2.7.4,<3.0
+      - if: not win
+        then:
+          - uvloop >=0.21.0,<1.0
+      - fastapi >=0.136.3,<1.0
+      - starlette >=1.0.1,<2.0
+      - backoff >=2.2.1,<3.0
+      - pyyaml >=6.0.3,<7.0
+      - rq >=2.7.0,<3.0
+      - orjson >=3.11.6,<4.0
+      - hiredis >=3.0.0,<4.0
+      - apscheduler >=3.11.2,<4.0
+      - fastapi-sso >=0.19.0,<1.0
+      - pyjwt >=2.13.0,<3.0
+      - python-multipart >=0.0.27,<1.0
+      - cryptography >=49.0.0,<51.0
+      - pynacl >=1.6.2,<2.0
+      - websockets >=15.0.1,<16.0
+      - boto3 >=1.43.1,<2.0
+      - azure-identity >=1.25.2,<2.0
+      - azure-storage-blob >=12.28.0,<13.0
+      - mcp >=1.28.1,<2.0
+      - litellm-proxy-extras ==0.4.91
+      # litellm-enterprise is not packaged on conda-forge.
+      - restrictedpython >=8.5,<9.0
+      - rich >=13.9.4,<14.0
+      - inquirerpy >=0.3.4,<1.0
+      - polars >=1.38.1,<2.0
+      # Upstream asks for soundfile; conda-forge ships it as pysoundfile.
+      - pysoundfile >=0.12.1,<1.0
+      # pyroscope-io is only available in the 1.x series on conda-forge, which
+      # does not satisfy the upstream >=0.8.16,<1.0 pin.
+      - expression >=5.6.0,<6.0
+    # Thin client install for the `lite` CLI.
+    cli:
+      - rich >=13.9.4,<14.0
+      - pyyaml >=6.0.3,<7.0
+      - requests >=2.32.0,<3.0
+      - inquirerpy >=0.3.4,<1.0
+      - keyring >=25.6.0,<26.0
+    extra_proxy:
+      # prisma and resend are not packaged on conda-forge.
+      - azure-identity >=1.25.2,<2.0
+      - azure-keyvault-secrets >=4.10.0,<5.0
+      # Upstream pins google-cloud-kms >=2.24.2,<3.0; the newest 2.x build on
+      # conda-forge is 2.24.1.
+      - google-cloud-kms >=2.24.1,<3.0
+      - google-cloud-iam >=2.19.1,<3.0
+      - redisvl >=0.4.1,<1.0
+      # NOTE: google-cloud-kms requires protobuf <6, while a2a-sdk requires
+      # protobuf >=5.29.5 and conda-forge's grpcio builds are linked against
+      # libprotobuf 6.33.5. This group is therefore not solvable on conda-forge
+      # until that packaging gap is closed; it is kept here to mirror upstream.
+      - a2a-sdk >=1.1.0,<2.0
+    utils:
+      - numpydoc >=1.8.0,<2.0
+    caching:
+      - diskcache >=5.6.3,<6.0
+    mcp:
+      - mcp >=1.28.1,<2.0
+    saml:
+      - python3-saml >=1.16.0,<2.0
+    # The upstream `semantic-router` group depends on semantic-router and
+    # aurelio-sdk, neither of which is packaged on conda-forge.
+    mlflow:
+      - mlflow >=3.11.1,<4.0
+    grpc:
+      - grpcio ==1.78.0
+    stt-nvidia-riva:
+      # nvidia-riva-client is not packaged on conda-forge.
+      - pysoundfile >=0.12.1
+      - audioread >=3.0.1
+      - numpy >=1.26.0
+    google:
+      - google-cloud-aiplatform >=1.133.0,<2.0
+    # The upstream `bedrock-realtime` group contains only
+    # aws-sdk-bedrock-runtime, which is not packaged on conda-forge.
+    proxy-runtime:
+      - google-cloud-aiplatform >=1.133.0,<2.0
+      - google-genai >=1.37.0,<2.0
+      - anthropic >=0.84.0,<1.0
+      - grpcio ==1.78.0
+      # Upstream names prometheus-client and langfuse; conda-forge ships them
+      # as prometheus_client and langfuse-python.
+      - prometheus_client >=0.20.0,<1.0
+      - langfuse-python >=2.59.7,<3.0
+      # Upstream pins the opentelemetry family to ==1.28.0 / ==0.49b0, but
+      # conda-forge only publishes the 1.28.2 / 0.49b2 patch releases.
+      # NOTE: opentelemetry-proto 1.28.2 requires protobuf <6, which conflicts
+      # with the libprotobuf 6.33.5 that conda-forge's grpcio 1.78.0 links
+      # against, so this group is not solvable on conda-forge until that
+      # packaging gap is closed; it is kept here to mirror upstream.
+      - opentelemetry-api ==1.28.2
+      - opentelemetry-sdk ==1.28.2
+      - opentelemetry-exporter-otlp ==1.28.2
+      - opentelemetry-instrumentation-fastapi ==0.49b2
+      - ddtrace >=4.8.2,<5.0
+      - sentry-sdk >=2.21.0,<3.0
+      - mangum >=0.17.0,<1.0
+      # azure-ai-contentsafety is not packaged on conda-forge.
+      - azure-storage-file-datalake >=12.20.0,<13.0
+      - pypdf >=6.12.0,<7.0
+      - llm-sandbox >=0.3.39,<1.0
+      # Upstream asks for detect-secrets; conda-forge ships it as
+      # bc-detect-secrets.
+      - bc-detect-secrets >=1.5.0,<2.0
 
 tests:
   - python:
