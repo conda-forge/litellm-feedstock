@@ -1,5 +1,5 @@
 context:
-  version: "1.103.2"
+  version: 1.104.0
 
 package:
   name: litellm
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/litellm/litellm-${{ version }}.tar.gz
-  sha256: fa4f6f158bb6e9da41958fe57dd292ac851f23ecceb75b50e70177255e291d3b
+  sha256: df550ab471974edefd7cb0cc6b88b42db453f0de6b91db3cc570f5e1e8d8b173
 
 build:
   skip:
@@ -42,17 +42,21 @@ requirements:
     - python
   run:
     - fastuuid >=0.14.0,<1.0
+    - filelock >=3.16.1,<4.0
     - httpx >=0.28.0,<1.0
     - python
     - openai >=2.20.0,<3.0.0
     - python-dotenv >=1.0.0,<2.0
+    - pyyaml >=6.0.3,<7.0
+    - packaging >=24.0
+    - importlib-metadata >=8.0.0,<9.0
     - if: match('python', '<3.14')
       then:
         - tiktoken >=0.8.0,<1.0
       else:
         - tiktoken >=0.12.0,<1.0
-    - importlib-metadata >=8.0.0,<9.0
     - tokenizers >=0.21.0,<1.0
+    - huggingface_hub >=0.34.0,<2.0
     - click >=8.0.0,<9.0
     - jinja2 >=3.1.6,<4.0
     - aiohttp >=3.14.2,<4.0
@@ -65,6 +69,7 @@ requirements:
     - pydantic-settings >=2.14.1,<3.0
     - jsonschema >=4.0.0,<5.0
     - boto3 >=1.43.1,<2.0
+
 tests:
   - python:
       imports: litellm
