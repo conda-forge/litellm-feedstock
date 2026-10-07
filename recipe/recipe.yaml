@@ -1,5 +1,5 @@
 context:
-  version: 1.104.0
+  version: "1.104.1"
 
 package:
   name: litellm
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/litellm/litellm-${{ version }}.tar.gz
-  sha256: df550ab471974edefd7cb0cc6b88b42db453f0de6b91db3cc570f5e1e8d8b173
+  sha256: c06d0aeef8b3f14dd6c9c6f128a7c0722bfd190f9d127e1477577fd9f0b0f37d
 
 build:
   skip:
