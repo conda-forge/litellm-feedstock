@@ -1,5 +1,5 @@
 context:
-  version: 1.105.1
+  version: 1.106.0
 
 package:
   name: litellm
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/litellm/litellm-${{ version }}.tar.gz
-  sha256: f1a274db0b2bcc78c34ed34c06df2c1dcd0dc038469193684927f6bb2cab2d97
+  sha256: 5c84cc7d928cdb6ec57c5d87f221e3d27ca755958ebae389d5663f822b6f7a19
 
 build:
   skip:
@@ -71,6 +71,7 @@ requirements:
     - pydantic-settings >=2.14.1,<3.0
     - jsonschema >=4.0.0,<5.0
     - boto3 >=1.43.1,<2.0
+    - typing_extensions >=4.13.0,<5.0
 tests:
   - python:
       imports: litellm
