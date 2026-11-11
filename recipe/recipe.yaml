@@ -10,7 +10,7 @@ source:
   sha256: 267639caedf188b4b9417132c3778ec322e774f8a24b836d12d8843e5b2d5e14
 
 build:
-  skip: match(python, '<3.11') or match(python, '>=3.16')
+  skip: match(python, '<3.11') or match(python, '>=3.16') or (match(python, '==3.15') and osx and arm64)
   script:
     - cd litellm-rust
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
