@@ -4,6 +4,8 @@ bot:
     exclude:
     - 1.82.7
     - 1.82.8
+  abi_migration_branches:
+    - "v1.108.x"
 conda_build:
   error_overlinking: true
 conda_build_tool: rattler-build
