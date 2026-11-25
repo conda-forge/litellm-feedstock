@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/litellm/litellm-${{ version }}.tar.gz
-  sha256: 8299dd2b83ff5994269c3dbd6be73b63df58b20857154a6e08e9e7d82f2a9fad
+  sha256: 215d17ec66b215b31884347a432b6c95d62b1b1a0d662ad336024b05f4b68ec1
 
 build:
   skip: match(python, '<3.11') or match(python, '>=3.15')
